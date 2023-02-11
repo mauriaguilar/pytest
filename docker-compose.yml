@@ -1,0 +1,12 @@
+services:
+  pytest:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+      args:
+        PYTHON_VERSION: ${PYTHON_VERSION}
+        PYTEST_VERSION: ${PYTEST_VERSION}
+    volumes:
+      - ${TEST_FILES_FOLDER}:/root
+    container_name: testing
+    image: testing:latest

@@ -1,12 +1,13 @@
 # docker pull python:3.9-alpine
 # docker run -it python:3.9-alpine sh
 
-FROM python:3.9-alpine
+ARG PYTHON_VERSION
+FROM python:$PYTHON_VERSION
 
-RUN pip install pytest==7.2.1
-
+ARG PYTEST_VERSION
+RUN pip install pytest==$PYTEST_VERSION
 WORKDIR /root
-ADD *.py .
-CMD ["pytest"]
-# docker build -t testing:v1 .
-# docker run -it testing:v1 sh
+CMD [ "pytest" ]
+
+# docker build -t testing:latest .
+# docker run -it testing:latest sh
