@@ -17,3 +17,8 @@ To enter in the docker image:
 ```bash
 make enter
 ```
+
+## Info
+https://pypi.org/project/pytest/
+https://github.com/pytest-dev/pytest
+https://hub.docker.com/_/python
